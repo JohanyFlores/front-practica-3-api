@@ -1,39 +1,47 @@
+// src/spellscard.jsx
+
 import styles from './spellscard.module.css';
 
 // Importaciones de imágenes
-import magiaIcon from "./assets/icons/classes/bard.png";
-import religionIcon from "./assets/icons/classes/cleric.png";
-import tribuIcon from "./assets/icons/classes/druid.png";
-import aldeaIcon from "./assets/icons/classes/wizard.png";
+import evocationIcon from './assets/icons/classes/wizard.png'; // Evocación
+import abjurationIcon from './assets/icons/classes/cleric.png'; // Abjuración
+import enchantmentIcon from './assets/icons/classes/bard.png';   // Encantamiento
+import transmutationIcon from './assets/icons/classes/druid.png'; // Transmutación
+import defaultIcon from './assets/icons/classes/sorcerer.png';   // Un ícono por defecto
 
-// Mapa para seleccionar el ícono correcto
+// 1. El mapa ahora usa los nombres REALES de las escuelas de magia
 const iconMap = {
-  magia: magiaIcon,
-  religion: religionIcon,
-  tribu: tribuIcon,
-  aldea: aldeaIcon,
+  'Evocation': evocationIcon,
+  'Abjuration': abjurationIcon,
+  'Enchantment': enchantmentIcon,
+  'Transmutation': transmutationIcon,
+  // ...puedes añadir más escuelas aquí
 };
 
-// ÚNICA DEFINICIÓN DEL COMPONENTE
-// Asegúrate de que todas las props que necesitas estén listadas aquí
-export function SpellsCard({ name, type, onSelectSpell, level, range, actionType }) { 
-  
+// 1. La función ahora recibe 'spell', 'type', y 'onSelectSpell'
+export function SpellsCard({ spell, type, onSelectSpell }) { 
+
+  // Si no hay un hechizo, no renderizamos nada para evitar errores
+  if (!spell) {
+    return null;
+  }
+
   return (
+    // 2. El evento onClick ahora llama directamente a la función 'onSelectSpell'
     <div className={styles.element} onClick={onSelectSpell}>
       <img
         className={styles.icon}
-        src={iconMap[type]}
-        alt={`${type} icon`}
-      />
-      <p className={styles.spellName}>{name}</p>
+        src={icon} // Usa el 'type' para el ícono
+        alt={schoolName || 'Hechizo'}  />
+      
+      {/* 3. Accedemos a los datos a través del objeto 'spell' */}
+      <p className={styles.spellName}>{spell.name}</p>
 
-      {/* Muestra la nueva información */}
-      <div className={styles.spellDetails}>
-        <p><strong>Nivel:</strong> {level}</p>
-        <p><strong>Acción:</strong> {actionType}</p>
-        <p><strong>Rango:</strong> {range}</p>
+      <div className={styles.spellList}>
+        <p><strong>Nivel:</strong> {spell.level}</p>
+        <p><strong>Acción:</strong> {spell.action}</p>
+        <p><strong>Rango:</strong> {spell.range}</p>
       </div>
     </div>
   );
 }
-export default SpellsCard;
