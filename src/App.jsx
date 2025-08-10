@@ -46,7 +46,11 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>{selectedSpel? selectedSpell.name : 'Libro de Hechizos'}</h1>
+      <h1>{selectedSpell ? selectedSpell.name : 'Libro de Hechizos'}</h1>
+
+      {/* --- LÓGICA CORREGIDA --- */}
+      {/* Solo muestra los botones si NO hay un hechizo seleccionado */}
+      {!selectedSpell && (
         <div className="class-selector">
           {classes.map(className => (
             <button key={className} onClick={() => handleClassSelect(className)}>
@@ -54,8 +58,9 @@ function App() {
             </button>
           ))}
         </div>
-      </header>
-      
+      )}
+            </header>
+
       <main>
         {isLoading ? (
           <p>Cargando...</p>

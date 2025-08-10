@@ -7,11 +7,29 @@ body {
 }
 
 .App {
-  /* Le damos una altura para que el centrado funcione */
-  min-height: 100vh;
+  display: flex;
+flex-direction: column;
+align-items: center; /* Centra todo el contenido horizontalmente */
+text-align: center;  /* Asegura que el texto como el h1 también se centre */
+min-height: 100vh;   /* Ocupa al menos toda la altura de la pantalla */
+}
+
+main {
+  flex-grow: 1; /* Permite que el contenido principal crezca para ocupar el espacio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+  text-align: center;
+  padding: 40px 20px;
+  color: #0d1a4d;
+}
+.spells-details {
   text-align: center;
   padding: 40px 20px;
   color: #0d1a4d;
@@ -33,12 +51,15 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
   
   /* Y estas reglas organizan la tarjeta y el botón adentro */
+.spells-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center; /* <-- Esta es la propiedad clave para centrar */
+  gap: 15px;
+  padding: 20px;
 }
 
 .back-button {
