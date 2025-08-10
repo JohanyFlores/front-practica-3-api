@@ -2,17 +2,23 @@
 
 import { useState, useEffect } from 'react';
 import './App.css';
-// Asegúrate de que getSpellById esté importado
 import { getClasses, getSpellsByClass, getSpellById } from './servicios/api.js';
-import { SpellsCard } from './spellscard.jsx'; // Asegúrate de que tu componente de tarjeta se importe correctamente
+import { SpellDetail } from "./SpellDetail.jsx"; 
+import { SpellListView } from './SpellListView.jsx'; // 1. IMPORTA EL NUEVO COMPONENTE DE LISTA
+import { SpellsCard } from './spellscard.jsx'; // Asegúrate de que este componente esté disponible
 
 function App() {
+  // Toda la lógica y los estados se quedan aquí, en el componente padre
   const [classes, setClasses] = useState([]);
   const [spellIds, setSpellIds] = useState([]);
-  const [selectedSpell, setSelectedSpell] = useState(null); // El estado para el detalle
+  const [selectedSpell, setSelectedSpell] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  
-  // Carga las clases al iniciar
+
+  // ... (todas tus funciones handle... no cambian)
+  const handleClassSelect = async (className) => { /*...*/ };
+  const handleSpellNameClick = async (spellId) => { /*...*/ };
+  const handleReturnToList = () => { /*...*/ };
+
   useEffect(() => {
     const fetchClasses = async () => {
       const classData = await getClasses();
@@ -21,71 +27,27 @@ function App() {
     fetchClasses();
   }, []);
 
-  // Carga la lista de nombres de hechizos cuando se selecciona una clase
-  const handleClassSelect = async (className) => {
-    setIsLoading(true);
-    setSelectedSpell(null); // Limpia el detalle anterior
-    const ids = await getSpellsByClass(className);
-    setSpellIds(ids);
-    setIsLoading(false);
-  };
-
-  // Carga los detalles de un hechizo cuando se hace clic en su nombre
-  const handleSpellNameClick = async (spellId) => {
-    setIsLoading(true);
-    const spellDetails = await getSpellById(spellId);
-    setSelectedSpell(spellDetails);
-    setIsLoading(false);
-  };
-
-  // Vuelve a la lista de nombres de hechizos
-  const handleReturnToSpellList = () => {
-    setSelectedSpell(null);
-  };
-
   return (
     <div className="App">
-      <header>
-      <h1>{selectedSpell ? selectedSpell.name : 'Libro de Hechizos'}</h1>
-
-      {/* --- LÓGICA CORREGIDA --- */}
-      {/* Solo muestra los botones si NO hay un hechizo seleccionado */}
       {!selectedSpell && (
-        <div className="class-selector">
-          {classes.map(className => (
-            <button key={className} onClick={() => handleClassSelect(className)}>
-              {className}
-            </button>
-          ))}
-        </div>
+        <header>
+          <h1>Libro de Hechizos</h1>
+        </header>
       )}
-            </header>
-
+      
       <main>
         {isLoading ? (
           <p>Cargando...</p>
         ) : selectedSpell ? (
-          // --- VISTA DE DETALLE ---
-          <div className="detail-view">
-            <SpellsCard spell={selectedSpell} onSelectSpell ={() => {}}/>
-            <button className="back-button" onClick={handleReturnToSpellList}>
-              Volver a la Lista
-            </button>
-          </div>
+          <SpellDetail spell={selectedSpell} onReturnToList={handleReturnToList} />
         ) : (
-          // --- VISTA DE LISTA DE NOMBRES ---
-          <div className="spells-list">
-            {spellIds.map(id => (
-              <div 
-                key={id} 
-                className="spell-list-item" 
-                onClick={() => handleSpellNameClick(id)}
-              >
-                {id.replace(/-/g, ' ')}
-              </div>
-            ))}
-            
-          </div>
+          // 2. USA TU NUEVO COMPONENTE AQUÍ, PASÁNDOLE LAS PROPS
+          <SpellListView 
+            classes={classes}
+            spellIds={spellIds}
+            onClassSelect={handleClassSelect}
+            onSpellNameClick={handleSpellNameClick}
+          />
         )}
       </main>
     </div>
