@@ -8,61 +8,15 @@ body {
 
 .App {
   display: flex;
-flex-direction: column;
-align-items: center; /* Centra todo el contenido horizontalmente */
-text-align: center;  /* Asegura que el texto como el h1 también se centre */
-min-height: 100vh;   /* Ocupa al menos toda la altura de la pantalla */
-}
-
-main {
-  flex-grow: 1; /* Permite que el contenido principal crezca para ocupar el espacio */
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  min-height: 100vh;
 }
 
 .App header {
   width: 100%;
-  text-align: center;
   margin-bottom: 40px;
-  text-align: center;
-  padding: 40px 20px;
+  padding: 40px 20px 0;
   color: #0d1a4d;
 }
-.spells-details {
-  text-align: center;
-  padding: 40px 20px;
-  color: #0d1a4d;
-}
-
-/* --- Contenedor de la Lista --- */
-.spells-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 0 20px;
-}
-
-/* --- Contenedor de la Vista de Detalle --- */
-
-  
-  /* Y estas reglas organizan la tarjeta y el botón adentro */
-
-
-
-/* En tu archivo App.css */
-
-.spells-container {
-  display: flex; /* Activa el layout de Flexbox */
-  flex-wrap: wrap; /* Permite que las tarjetas salten a la siguiente línea */
-  justify-content: center; /* Centra las tarjetas horizontalmente */
-  gap: 15px; /* Define el espacio entre cada tarjeta */
-  padding: 20px;
-}
-
-/* En tu archivo App.css */
-
-
-
-

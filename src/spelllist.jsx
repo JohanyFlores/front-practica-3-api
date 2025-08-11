@@ -1,14 +1,14 @@
 // src/SpellListView.jsx
 
 import React from 'react';
-import './App.css'; // Para los estilos de los botones y la lista
+import styles from './SpellListView.module.css';
 
 // Recibe como props los datos y las funciones que necesita desde App.jsx
 export function SpellListView({ classes, spellIds, onClassSelect, onSpellNameClick }) {
   return (
     // Usamos un Fragmento (<>) porque devolvemos dos elementos principales
     <>
-      <div className="class-selector">
+      <div className={styles["class-selector"]}>
         {classes.map(className => (
           <button key={className} onClick={() => {
   console.log('Botón de clase presionado en el hijo:', className);

@@ -2,6 +2,7 @@
 
 import { SpellsCard } from './spellscard.jsx';
 import './App.css'; // Para los estilos del botón
+import styles from './spelldetail.module.css; // <-- Importa su CSS
 
 // Recibe como props el hechizo a mostrar y la función para volver
 export function SpellDetail({ spell, onReturnToList }) {
