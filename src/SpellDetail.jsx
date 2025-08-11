@@ -12,7 +12,7 @@ export function SpellDetail({ spell, onReturnToList }) {
         spell={spell}
         onSelectSpell={() => {}} // El onClick no hace nada en la vista de detalle
       />
-      <button className="back-button" onClick={onReturnToList}>
+      <button className={styles.backButton} onClick={onReturnToList}>
         Volver a la Lista
       </button>
     </div>

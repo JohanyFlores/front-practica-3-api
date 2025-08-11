@@ -6,6 +6,7 @@ import styles from './spellscard.module.css';
 
 const API_BASE_URL = "https://inesdi2025-resources-p2.fly.dev/v1";
 
+
 export function SpellsCard({ spell, onSelectSpell }) { 
   if (!spell) return null;
 
@@ -29,5 +30,7 @@ export function SpellsCard({ spell, onSelectSpell }) {
 
       </div>
     </div>
+    
+  
   );
 }

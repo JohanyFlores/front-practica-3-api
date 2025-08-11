@@ -16,8 +16,9 @@
 }
 
 .spellListItem {
-  background-color: #ffffff;
-  border: 1px solid #dfe1e5;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #C6AC8F;
+  color: #EAE0D5;
   border-radius: 20px;
   padding: 10px 20px;
   cursor: pointer;
@@ -29,5 +30,29 @@
 
 .spellListItem:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+   color: #FFFFFF; /* Texto más brillante */
+  border-color: #FFF;
+  /* Crea un resplandor mágico alrededor del botón */
+  box-shadow: 0 0 15px #C6AC8F;
+}
+
+.classSelector button {
+  background-color: rgba(255, 255, 255, 0.05); /* Ligeramente transparente */
+  border: 1px solid #C6AC8F; /* Borde dorado pálido */
+  color: #EAE0D5; /* Texto color hueso */
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-family: 'Cinzel', serif; /* Usa la fuente épica */
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+
+
+.classSelector button:hover {
+  color: #FFFFFF; /* Texto más brillante */
+  border-color: #FFF;
+  /* Crea un resplandor mágico alrededor del botón */
+  box-shadow: 0 0 15px #C6AC8F;
 }

@@ -1,8 +1,8 @@
 .element {
-    background-color: #f9f9f9; /* Un fondo gris muy claro */
-    border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #C6AC8F  ;
     border-radius: 10px; /* Esquinas más redondeadas */
-    box-shadow: 3px 3px 8px #ddd; /* Sombra más pronunciada */
+    box-shadow: 3px 3px 8px #C6AC8F; /* Sombra más pronunciada */
     padding: 16px;
     width: 320px; /* Ancho fijo para simular una carta */
     margin-bottom: 20px; /* Espacio entre cartas si tienes varias */
@@ -12,6 +12,8 @@
     text-align: center; /* Centra el texto dentro de la carta */
     margin-left: auto;
     margin-right: auto;
+    color: #EAE0D5;
+    
   }
   
   .icon {
@@ -24,7 +26,7 @@
     font-size: 1.5em; /* Nombre más grande */
     font-weight: bold;
     margin-bottom: 8px;
-    color: #333; /* Color de texto más oscuro */
+    color: #EAE0D5;
   }
-
+  
   

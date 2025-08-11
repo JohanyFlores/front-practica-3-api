@@ -19,19 +19,29 @@
   gap: 20px;
 
   /* 4. Fondo y padding */
-  background-color: #f0f2f5;
-  padding: 20px;
+  background-color: #0C1445;
+  background-image: radial-gradient(circle, #2C3A8A, #1B2558, #0C1445);  padding: 20px;
   box-sizing: border-box; /* Importante para que el padding no desborde */
 }
 
 .backButton {
   /* Estilos que ya tenías para el botón */
-  background-color: #6c757d;
-  color: white;
-  border: none;
+  background-color: rgba(255, 255, 255, 0.05); /* Ligeramente transparente */
+  color: #EAE0D5; /* Texto color hueso */
+  border: 1px solid #C6AC8F; /* Borde dorado pálido */
   border-radius: 6px;
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
+  box-shadow: 3px 3px 8px #C6AC8F; /* Sombra más pronunciada */
   cursor: pointer;
+}
+
+.backButton:hover {
+  color: #FFFFFF; /* Texto más brillante */
+  border-color: #FFF;
+  /* Crea un resplandor mágico alrededor del botón */
+  box-shadow: 0 0 15px #C6AC8F;
+  transform: translateY(-3px);
+
 }
