@@ -45,33 +45,11 @@ main {
 }
 
 /* --- Contenedor de la Vista de Detalle --- */
-.detail-view {
-  /* Esta técnica saca el elemento del flujo normal para centrarlo */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
   
   /* Y estas reglas organizan la tarjeta y el botón adentro */
-.spells-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* <-- Esta es la propiedad clave para centrar */
-  gap: 15px;
-  padding: 20px;
-}
 
-.back-button {
-  background-color: #6c757d;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-}
+
 
 /* En tu archivo App.css */
 
@@ -85,21 +63,6 @@ main {
 
 /* En tu archivo App.css */
 
-.spell-list-item {
-  background-color: #ffffff;
-  border: 1px solid #dfe1e5;
-  border-radius: 20px; /* Bordes redondeados para un look de píldora */
-  padding: 10px 20px;
-  cursor: pointer; /* Cambia el cursor para indicar que es clicleable */
-  font-weight: 500;
-  text-transform: capitalize; /* Pone en mayúscula la primera letra */
-  transition: all 0.2s ease-in-out; /* Animación suave */
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-}
 
-.spell-list-item:hover {
-  transform: translateY(-3px); /* Eleva la tarjeta al pasar el ratón */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  border-color: #1a73e8;
-  color: #1a73e8;
-}
+
+
