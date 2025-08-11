@@ -1,13 +1,31 @@
-/* src/spelldetail.module.css */
+/* En tu archivo src/spelldetail.module.css */
 
 .detailView {
+  /* 1. Posicionamiento para cubrir toda la pantalla */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10; /* Se asegura de que esté por encima de otro contenido */
+
+  /* 2. Dimensiones para ocupar el 100% de la ventana */
+  width: 100vw;  /* 100% del ancho de la ventana */
+  height: 100vh; /* 100% del alto de la ventana */
+  
+  /* 3. Estilos para centrar el contenido DENTRO de la pantalla completa */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center; /* Centra verticalmente */
+  align-items: center;   /* Centra horizontalmente */
   gap: 20px;
+
+  /* 4. Fondo y padding */
+  background-color: #f0f2f5;
+  padding: 20px;
+  box-sizing: border-box; /* Importante para que el padding no desborde */
 }
 
 .backButton {
+  /* Estilos que ya tenías para el botón */
   background-color: #6c757d;
   color: white;
   border: none;
@@ -16,9 +34,4 @@
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.backButton:hover {
-  background-color: #5a6268;
 }

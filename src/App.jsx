@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import { getClasses, getSpellsByClass, getSpellById } from './servicios/api.js';
 import { SpellDetail } from "./spelldetail.jsx"; 
-import { SpellListView } from './spelllist.jsx'; // 1. IMPORTA EL NUEVO COMPONENTE DE LISTA
+import { SpellList } from './spelllist.jsx'; // 1. IMPORTA EL NUEVO COMPONENTE DE LISTA
 
 function App() {
   // Toda la lógica y los estados se quedan aquí, en el componente padre
@@ -73,7 +73,7 @@ function App() {
           <SpellDetail spell={selectedSpell} onReturnToList={handleReturnToList} />
         ) : (
           // 2. USA TU NUEVO COMPONENTE AQUÍ, PASÁNDOLE LAS PROPS
-          <SpellListView 
+          <SpellList 
             classes={classes}
             spellIds={spellIds}
             onClassSelect={handleClassSelect}

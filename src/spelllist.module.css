@@ -1,6 +1,5 @@
 /* src/spelllistview.module.css */
-
-.classSelector {
+.classSelector { /* Ahora es una clase global */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

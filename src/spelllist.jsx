@@ -1,28 +1,24 @@
-// src/SpellListView.jsx
+// src/spelllist.jsx
 
 import React from 'react';
-import styles from './SpellListView.module.css';
+import styles from './spelllist.module.css';
 
-// Recibe como props los datos y las funciones que necesita desde App.jsx
-export function SpellListView({ classes, spellIds, onClassSelect, onSpellNameClick }) {
+export function SpellList({ classes, spellIds, onClassSelect, onSpellNameClick }) {
   return (
-    // Usamos un Fragmento (<>) porque devolvemos dos elementos principales
     <>
-      <div className={styles["class-selector"]}>
+      <div className={styles.classSelector}>
         {classes.map(className => (
-          <button key={className} onClick={() => {
-  console.log('Botón de clase presionado en el hijo:', className);
-  onClassSelect(className);
-}}>
-  {className}
-</button>
+          <button key={className} onClick={() => onClassSelect(className)}>
+            {className}
+          </button>
         ))}
       </div>
-      <div className="spells-list">
+      
+      <div className={styles.spellsList}>
         {spellIds.map(id => (
           <div 
             key={id} 
-            className="spell-list-item" 
+            className={styles.spellListItem}
             onClick={() => onSpellNameClick(id)}
           >
             {id.replace(/-/g, ' ')}
