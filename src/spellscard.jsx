@@ -2,40 +2,31 @@
 
 import styles from './spellscard.module.css';
 
-// 1. PRIMERO, LAS IMPORTACIONES DE IMÁGENES
-import evocationIcon from './assets/icons/classes/wizard.png';
-import abjurationIcon from './assets/icons/classes/cleric.png';
-import enchantmentIcon from './assets/icons/classes/bard.png';
-import transmutationIcon from './assets/icons/classes/druid.png';
-import defaultIcon from './assets/icons/classes/sorcerer.png';
+// ¡YA NO NECESITAMOS IMPORTAR IMÁGENES NI TENER UN iconMap!
 
-// 2. LUEGO, LA DEFINICIÓN DE 'iconMap' (ESTA ES LA PARTE QUE PROBABLEMENTE FALTA)
-const iconMap = {
-  'Evocation': evocationIcon,
-  'Abjuration': abjurationIcon,
-  'Enchantment': enchantmentIcon,
-  'Transmutation': transmutationIcon,
-};
+const API_BASE_URL = "https://inesdi2025-resources-p2.fly.dev/v1";
 
-// 3. FINALMENTE, EL COMPONENTE QUE USA 'iconMap'
 export function SpellsCard({ spell, onSelectSpell }) { 
   if (!spell) return null;
 
-  const schoolName = spell.school?.name;
-  const icon = iconMap[schoolName] || defaultIcon;
+  // 1. Construimos la URL de la imagen del hechizo dinámicamente
+  const imageUrl = `${API_BASE_URL}/assets/spells/${spell.id}`;
 
   return (
     <div className={styles.element} onClick={onSelectSpell}>
       <img
         className={styles.icon}
-        src={icon}
-        alt={schoolName || 'Hechizo'}
+        src={imageUrl} // <-- 2. Asignamos la URL construida
+        alt={spell.name} // Usamos el nombre del hechizo como texto alternativo
       />
       <p className={styles.spellName}>{spell.name}</p>
       <div className={styles.spellDetails}>
         <p><strong>Nivel:</strong> {spell.level}</p>
         <p><strong>Acción:</strong> {spell.action}</p>
         <p><strong>Rango:</strong> {spell.range}</p>
+        <p><strong>Duracion:</strong> {spell.duration}</p>
+        <p><strong>Tipo:</strong> {spell.type}</p>
+
       </div>
     </div>
   );
