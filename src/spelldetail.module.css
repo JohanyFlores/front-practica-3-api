@@ -1,47 +1,36 @@
-/* En tu archivo src/spelldetail.module.css */
 
 .detailView {
-  /* 1. Posicionamiento para cubrir toda la pantalla */
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10; /* Se asegura de que esté por encima de otro contenido */
-
-  /* 2. Dimensiones para ocupar el 100% de la ventana */
-  width: 100vw;  /* 100% del ancho de la ventana */
-  height: 100vh; /* 100% del alto de la ventana */
+  z-index: 10;
+  width: 100vw;  
+  height: 100vh;
   
-  /* 3. Estilos para centrar el contenido DENTRO de la pantalla completa */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra verticalmente */
-  align-items: center;   /* Centra horizontalmente */
+  justify-content: center;
+  align-items: center;
   gap: 20px;
-
-  /* 4. Fondo y padding */
   background-color: #0C1445;
   background-image: radial-gradient(circle, #2C3A8A, #1B2558, #0C1445);  padding: 20px;
-  box-sizing: border-box; /* Importante para que el padding no desborde */
+  box-sizing: border-box; 
 }
-
 .backButton {
-  /* Estilos que ya tenías para el botón */
-  background-color: rgba(255, 255, 255, 0.05); /* Ligeramente transparente */
-  color: #EAE0D5; /* Texto color hueso */
-  border: 1px solid #C6AC8F; /* Borde dorado pálido */
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #EAE0D5;
+  border: 1px solid #C6AC8F;
   border-radius: 6px;
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
-  box-shadow: 3px 3px 8px #C6AC8F; /* Sombra más pronunciada */
+  box-shadow: 3px 3px 8px #C6AC8F; 
   cursor: pointer;
 }
 
 .backButton:hover {
-  color: #FFFFFF; /* Texto más brillante */
+  color: #FFFFFF;
   border-color: #FFF;
-  /* Crea un resplandor mágico alrededor del botón */
   box-shadow: 0 0 15px #C6AC8F;
   transform: translateY(-3px);
-
 }

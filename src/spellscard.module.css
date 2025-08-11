@@ -1,15 +1,15 @@
 .element {
   background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid #C6AC8F  ;
-    border-radius: 10px; /* Esquinas más redondeadas */
-    box-shadow: 3px 3px 8px #C6AC8F; /* Sombra más pronunciada */
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px #C6AC8F;
     padding: 16px;
-    width: 320px; /* Ancho fijo para simular una carta */
-    margin-bottom: 20px; /* Espacio entre cartas si tienes varias */
+    width: 320px;
+    margin-bottom: 20px;
     display: flex;
-    flex-direction: column; /* Apila los elementos verticalmente */
-    align-items: center; /* Centra los elementos horizontalmente */
-    text-align: center; /* Centra el texto dentro de la carta */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     color: #EAE0D5;
@@ -17,13 +17,13 @@
   }
   
   .icon {
-    width: 80px; /* Icono más grande */
+    width: 80px;
     height: 80px;
     margin-bottom: 10px;
   }
   
   .spellName {
-    font-size: 1.5em; /* Nombre más grande */
+    font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 8px;
     color: #EAE0D5;

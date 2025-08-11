@@ -2,7 +2,6 @@
 
 import styles from './spellscard.module.css';
 
-// ¡YA NO NECESITAMOS IMPORTAR IMÁGENES NI TENER UN iconMap!
 
 const API_BASE_URL = "https://inesdi2025-resources-p2.fly.dev/v1";
 
@@ -10,15 +9,14 @@ const API_BASE_URL = "https://inesdi2025-resources-p2.fly.dev/v1";
 export function SpellsCard({ spell, onSelectSpell }) { 
   if (!spell) return null;
 
-  // 1. Construimos la URL de la imagen del hechizo dinámicamente
   const imageUrl = `${API_BASE_URL}/assets/spells/${spell.id}`;
 
   return (
     <div className={styles.element} onClick={onSelectSpell}>
       <img
         className={styles.icon}
-        src={imageUrl} // <-- 2. Asignamos la URL construida
-        alt={spell.name} // Usamos el nombre del hechizo como texto alternativo
+        src={imageUrl} 
+        alt={spell.name}
       />
       <p className={styles.spellName}>{spell.name}</p>
       <div className={styles.spellDetails}>
